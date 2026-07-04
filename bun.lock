@@ -180,6 +180,37 @@
         "@types/bun": "catalog:",
       },
     },
+    "packages/oracl3-cli": {
+      "name": "@oracl3/cli",
+      "version": "0.1.0",
+      "bin": {
+        "oracl3": "src/cli.ts",
+      },
+      "dependencies": {
+        "@oracl3/core": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/bun": "catalog:",
+      },
+    },
+    "packages/oracl3-core": {
+      "name": "@oracl3/core",
+      "version": "0.1.0",
+      "devDependencies": {
+        "@types/bun": "catalog:",
+      },
+    },
+    "packages/oracl3-omp-adapter": {
+      "name": "@oracl3/omp-adapter",
+      "version": "0.1.0",
+      "dependencies": {
+        "@oh-my-pi/pi-coding-agent": "catalog:",
+        "@oracl3/core": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/bun": "catalog:",
+      },
+    },
     "packages/snapcompact": {
       "name": "@oh-my-pi/snapcompact",
       "version": "16.3.5",
@@ -789,6 +820,12 @@
     "@opentelemetry/sdk-trace-node": ["@opentelemetry/sdk-trace-node@2.8.0", "", { "dependencies": { "@opentelemetry/context-async-hooks": "2.8.0", "@opentelemetry/core": "2.8.0", "@opentelemetry/sdk-trace-base": "2.8.0" }, "peerDependencies": { "@opentelemetry/api": ">=1.0.0 <1.10.0" } }, "sha512-nZt9OGufioAc3AfoLTqA9bsAeaMJAictYDdI2VcNQ+PmT+3rfKjAZDZvgPfd8VPX0O5Bw1hdQF6kDK8VSpZiWg=="],
 
     "@opentelemetry/semantic-conventions": ["@opentelemetry/semantic-conventions@1.41.1", "", {}, "sha512-/UhIkaZgPutTFmQ7RnIJGgDXZmtEJ7Dvi86xNTFWcnRxVRNk/aotsqDJYeEvDP+FSMB2SdW+pQzNMcWP0rwuNA=="],
+
+    "@oracl3/cli": ["@oracl3/cli@workspace:packages/oracl3-cli"],
+
+    "@oracl3/core": ["@oracl3/core@workspace:packages/oracl3-core"],
+
+    "@oracl3/omp-adapter": ["@oracl3/omp-adapter@workspace:packages/oracl3-omp-adapter"],
 
     "@oxc-project/types": ["@oxc-project/types@0.137.0", "", {}, "sha512-WT+Gb24i8hmvo85AIv2oEYouEXkRlKAlT9WaCa3TfLgNCN+GhrJOGZuIlMouAh38Qe4QOx26eUOVsq70qXrywA=="],
 
