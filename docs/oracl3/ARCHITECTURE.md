@@ -48,6 +48,20 @@ OMP-native formats (tool results, TUI renderables, event streams). This is
 the thin seam where OMP integration lives and the only place that imports
 from `@oh-my-pi/*` packages.
 
+The adapter is also the boundary for exposing OMP capabilities headlessly.
+User-facing commands should live under the `oracl3` CLI, while OMP-specific
+discovery and invocation details stay here. The intended shape is:
+
+```bash
+oracl3 omp commands
+oracl3 omp tools
+oracl3 omp models
+oracl3 omp run -- <omp-command> [...args]
+```
+
+This keeps OMP's TUI/runtime optional for automation while avoiding OMP
+imports in `@oracl3/core`.
+
 ## Dependency Boundary
 
 ```
@@ -58,6 +72,8 @@ oracl3/omp-adapter ──► OMP   (authorised; imports @oh-my-pi/*)
 - **core** and **cli** must compile and test without a running OMP instance.
 - **adapter** depends on core for results and on OMP for delivery.
 - No package outside `oracl3-omp-adapter` may import from `@oh-my-pi/*`.
+- Headless OMP function exposure must route through `oracl3-omp-adapter`, not
+  through direct OMP imports in `@oracl3/cli` or `@oracl3/core`.
 
 ## OMP Integration Seam
 

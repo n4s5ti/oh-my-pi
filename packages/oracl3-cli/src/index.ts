@@ -1,6 +1,14 @@
 import type { AdviceSeverity } from "@oracl3/core";
 
-export const PLANNED_COMMANDS = ["watch", "advise", "research", "inspect-stream", "policy-check", "doctor"] as const;
+export const PLANNED_COMMANDS = [
+	"watch",
+	"advise",
+	"research",
+	"inspect-stream",
+	"policy-check",
+	"doctor",
+	"omp",
+] as const;
 
 export type PlannedCommand = (typeof PLANNED_COMMANDS)[number];
 export type CliDiagnostic = {
@@ -20,6 +28,7 @@ Commands:
   inspect-stream    Introspect the current automation event stream
   policy-check      Validate automation rules against policy
   doctor            Diagnose automation health and connectivity
+  omp               Expose OMP capabilities through headless CLI commands
 
 Options:
   --help, -h        Show this help message
