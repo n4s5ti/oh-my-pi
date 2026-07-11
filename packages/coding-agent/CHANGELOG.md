@@ -150,6 +150,7 @@
 - Fixed agents getting stuck waiting for messages from peers that have already stopped running.
 - Fixed compiled Linux binary extension loading when bundled web-search header generation cannot read `header-generator` data files from the build-time path. ([#5178](https://github.com/can1357/oh-my-pi/issues/5178))
 - Fixed plugin custom tool loading to skip and report invalid feature entries instead of crashing startup when a plugin dependency tree leaves one feature unresolved. ([#5189](https://github.com/can1357/oh-my-pi/issues/5189))
+- Fixed `autolearn.autoContinue` treating the hidden capture turn's terminal empty assistant stop as a retryable empty response instead of successful completion. ([#5211](https://github.com/can1357/oh-my-pi/issues/5211))
 
 ## [16.4.4] - 2026-07-11
 
